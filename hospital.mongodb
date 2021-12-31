@@ -4,7 +4,7 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 // Select the database to use.
-use('yiyuan');
+use('190110910121');
 
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
@@ -15,6 +15,8 @@ db.docnumsys.insertMany([
   { 'docname': 'li', 'docpwd': '123', },
   { 'docname': 'zhang', 'docpwd': '222', },
   { 'docname': 'wang', 'docpwd': '111', },
+  { 'docname': 'xu', 'docpwd': '33344', },
+  { 'docname': 'li33', 'docpwd': '2233', },
   
 ]);
 

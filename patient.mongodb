@@ -4,15 +4,17 @@
 // Use Ctrl+Space inside a snippet or a string literal to trigger completions.
 
 // Select the database to use.
-use('yiyuan');
+use('190110910121');
 
 // The drop() command destroys all data from a collection.
 
 
 // Insert a few documents into the sales collection.
 db.patsys.insertMany([
-  { 'patname': 'song', 'patpwd': '444',  },
-  { 'patname': 'shi', 'patpwd': '444',  },
+  { 'patname': 'song', 'patpwd': '33444',  },
+  { 'patname': 'shi', 'patpwd': '1111',  },
+  { 'patname': 'zha', 'patpwd': '2222',  },
+  { 'patname': 'wang', 'patpwd': '123',  },
   { 'patname': 'zha', 'patpwd': '444',  },
   
 ]);
