@@ -13,5 +13,8 @@
   ],
   "author": "nzc",
   "license": "GNU",
-  "git repository": "https://github.com/Nzc121/presys"
+  "git repository": "https://github.com/Nzc121/presys",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
