@@ -29,5 +29,96 @@ const schema_doc = {
 
 const doc = mongoose.model('docnumsys', schema_doc)
 
+app.get('/LoginController', function (req, res, next) {
+    uname=req.query.username;
+    pwd=req.query.password;
+    people=req.query.type;
+    // res.send("next")
+    console.log(people)
+    next()
+  })
+
+  app.get('/LoginController', function (req, res, next) {
+    if(people=="patient"){
+        pat.find({'patname':uname},(err,user)=>{
+          if(user.length!=0){
+
+          
+          if(user[0].patname==uname&&user[0].patpwd==pwd){
+            ejs.renderFile('./public/patientindex.html', {uname:uname, chudata:user[0]},  function(err, str){
+              // str => 输出渲染后的 HTML 字符串
+              if(err){console.log("File is not error.")}
+              else{
+                res.statusCode=200
+                res.setHeader('Content-type', 'text/html');
+                res.end(str);
+              
+              }
+            });
+          }else{
+            ejs.renderFile('./public/login.html', {result:'1'},  function(err, str){
+                  // str => 输出渲染后的 HTML 字符串
+                  if(err){console.log("File is not error.")}
+                  else{
+                    res.send(str)
+                  }
+                });
+          }
+        }else{
+          ejs.renderFile('./public/login.html', {result:'1'},  function(err, str){
+                // str => 输出渲染后的 HTML 字符串
+                if(err){console.log("File is not error.")}
+                else{
+                  res.send(str)
+                }
+              });
+        }
+        })
+   
+      
+    }
+    else{
+
+        doc.find({'docname':uname},(err,user)=>{
+          if(user.length!=0){
+
+          
+          if(user[0].docname==uname&&user[0].docpwd==pwd){
+            ejs.renderFile('doctor_index.html', {result:'1'},  function(err, str){
+              // str => 输出渲染后的 HTML 字符串
+              if(err){console.log("File is not error.")}
+              else{
+                res.statusCode=200
+                res.setHeader('Content-type', 'text/html');
+                res.end(str);
+              
+              }
+            });
+          }else{
+            ejs.renderFile('./public/login.html', {result:'1'},  function(err, str){
+                  // str => 输出渲染后的 HTML 字符串
+                  if(err){console.log("File is not error.")}
+                  else{
+                    res.send(str)
+                  }
+                });
+          }
+        }else{
+          ejs.renderFile('./public/login.html', {result:'1'},  function(err, str){
+                // str => 输出渲染后的 HTML 字符串
+                if(err){console.log("File is not error.")}
+                else{
+                  res.send(str)
+                }
+              });
+        }
+        })
+
+
+     
+      
+    }
+  // next();
+  })
 
 app.listen(10121)
