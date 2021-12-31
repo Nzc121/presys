@@ -1,10 +1,11 @@
 const express = require('express')
-const app = express()
 const ejs = require('ejs')
+const app = express()
 const mongoose = require('mongoose');
+const http = require('http')
+const fs = require('fs')
 const path = require('path');
-
-app.use('/',express.static('public'))
+ 
 mongoose.connect('mongodb://172.21.2.236:27017/190110910121');
 
 const schema = {
@@ -29,6 +30,7 @@ const schema_doc = {
 
 const doc = mongoose.model('docnumsys', schema_doc)
 
+app.use('/',express.static('public'))
 app.get('/LoginController', function (req, res, next) {
     uname=req.query.username;
     pwd=req.query.password;
@@ -121,4 +123,21 @@ app.get('/LoginController', function (req, res, next) {
   // next();
   })
 
-app.listen(10121)
+  app.get("/AddprescriptionController", (req, res)=>{
+    // res.send(req.query)
+    // console.log(req.query)
+    const chuf = new hos({ patno: req.query.patient, outnum: req.query.inpatientNumber, comment: req.query.content});
+    chuf.save()
+
+  
+    
+    ejs.renderFile("addprescription.html", {returnVal: "success"}, function(err,str){
+        res.send(str)
+    });
+})
+// var i =0 ;
+
+
+
+
+  app.listen(10121)
