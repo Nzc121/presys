@@ -1,0 +1,17 @@
+{
+  "name": "hospital_pre_system",
+  "version": "1.0.0",
+  "description": "it is a hospital_pre_system,doctor can write something to patient",
+  "main": "presys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "mongodb",
+    "express"
+  ],
+  "author": "nzc",
+  "license": "GNU",
+  "git repository": "https://github.com/Nzc121/190110910121"
+}
