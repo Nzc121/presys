@@ -1,0 +1,30 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('yiyuan');
+
+// The drop() command destroys all data from a collection.
+// Make sure you run it against the correct database and collection.
+
+
+// Insert a few documents into the sales collection.
+db.docnumsys.insertMany([
+  { 'docname': 'li', 'docpwd': '123', },
+  { 'docname': 'zhang', 'docpwd': '222', },
+  { 'docname': 'wang', 'docpwd': '111', },
+  
+]);
+
+// Run a find command to view items sold on April 4th, 2014.
+
+
+// Build an aggregation to view total sales for each product in 2014.
+
+
+// Run the aggregation and open a cursor to the results.
+// Use toArray() to exhaust the cursor to return the whole result set.
+// You can use hasNext()/next() to iterate through the cursor page by page.
+// db.sales.aggregate(aggregation);
